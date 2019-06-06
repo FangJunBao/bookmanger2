@@ -27,7 +27,7 @@
 </head>
 <body background="imgs/3.jpg">
 	
-	<form action="monster" method="post"  class="form-horizontal">
+	<form action="user" method="post"  class="form-horizontal">
         
 		<caption align=center color=red>
 			<h1 align="center">修改用户界面</h1>
