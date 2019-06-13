@@ -25,6 +25,10 @@ public interface UserService {
 
 	List<User> showUser();
 
+	void deleteUser(String[] arr);
+
+	
+
 	
   
 }

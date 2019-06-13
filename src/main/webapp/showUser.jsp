@@ -77,7 +77,7 @@ var selectAll=document.getElementById("selectAll");
 					}
 				}
 			};
-		/* var deleteStudent=document.getElementById("deleteStudent");
+		 var deleteStudent=document.getElementById("deleteStudent");
 			var chek=document.getElementsByName("ids");
 			deleteStudent.onclick=function(){
 				
@@ -114,16 +114,21 @@ var selectAll=document.getElementById("selectAll");
 
 				str=str.slice(0,str.length-1);
 				
-				var queren=confirm("您确认要删除这些学生吗？");
+				var queren=confirm("您确认要删除这些用户吗？");
 				
 				if(queren==true){
 					
-					location.href="Userservlet?action=deleteUser&ids="+str;
+					var $url="http://localhost/SSM_bookmanger/DUser/"+str;
+					
+					$("#deleteForm").attr("action", $url);
+					// alert($url);
+					$("#deleteForm").submit();
+					return false;
 				}else{
 					
 					location.reload();
 				}
-			}; */
+			}; 
 		
 		var  outAll=document.getElementById("outAll");
 			outAll.onclick=function(){
@@ -248,7 +253,7 @@ var selectAll=document.getElementById("selectAll");
 			<button id="fanxuan"><span class="ui-icon ui-icon-circle-check"></span>反选</button>
 			<button id="outSelect"><span class="ui-icon ui-icon-circle-triangle-n"></span>导出所选 </button>
 			<button id="outAll"> <span class="ui-icon ui-icon-circle-arrow-n"></span>导出所有</button>
-			<!-- <button id="deleteStudent"><span class="ui-icon ui-icon-trash ui-icon-sm"></span>删除</button> -->
+			 <button id="deleteStudent"><span class="ui-icon ui-icon-trash ui-icon-sm"></span>删除</button> 
 			</p>
 			</td>
 			<tr>

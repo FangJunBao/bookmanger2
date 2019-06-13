@@ -67,5 +67,17 @@
    select * from user 
   
   </select>
+  
+  <delete id="deleteByPrimaryKey2" parameterType="java.lang.String">
+   
+    delete from user
+    where id in
+    <foreach item="arr" collection="array" index="no" open="(" separator="," close=")">
+    	#{arr}
+    </foreach>
+
+     
+  
+  </delete>
      
 </mapper>

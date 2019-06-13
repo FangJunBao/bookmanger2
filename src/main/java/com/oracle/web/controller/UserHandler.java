@@ -62,6 +62,7 @@ public class UserHandler {
 	 }
 	*/
 	//2.删除用户
+	
 	 @RequestMapping(value="/user/{id}",method=RequestMethod.DELETE)
 	   	public String  delete(@PathVariable("id") Integer id1){
 	   		
@@ -325,7 +326,19 @@ public class UserHandler {
 		
 		return null;
     }
-  
+   //批量删除
+    @RequestMapping(value = "/DUser/{id}", method = RequestMethod.DELETE)
+ 	public String deleteUser(@PathVariable(value = "id") String ids){
+    	String[] arr = ids.split(",");
+
+ 		this.userService.deleteUser(arr);
+
+ 	
+
+ 		return "redirect:/users";
+
+ 	}
+ 	
     }
    		
     

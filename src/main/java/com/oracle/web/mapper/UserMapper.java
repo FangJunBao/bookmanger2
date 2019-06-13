@@ -23,4 +23,6 @@ public interface UserMapper {
 	List<User> showUserById(String[] arr);
 
 	List<User> showUser();
+
+	int deleteByPrimaryKey2(String[] arr);
 }
