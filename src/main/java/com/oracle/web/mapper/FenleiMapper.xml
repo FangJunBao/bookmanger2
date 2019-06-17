@@ -5,10 +5,11 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
   </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+ <!-- <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from fenlei
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  -->
   <insert id="insert" parameterType="com.oralce.web.bean.Fenlei">
     insert into fenlei (id, name)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR})
@@ -27,5 +28,52 @@
     select id, name
     from fenlei
   </select>
+  
+   <select id="selectCount" resultType="java.lang.Integer">
+  	SELECT COUNT(*) FROM fenlei
+  </select>
+  
+   <select id="selectBypage" parameterType="int"  resultMap="BaseResultMap">
+  	select * from fenlei  order by id desc limit #{index},5
+  	
+  </select>
+  
+  <select id="sesectAllBypage" parameterType="int"  resultMap="BaseResultMap">
+    select * from fenlei  order by id desc 
+  
+  
+  </select>
+  
+  <select id="showUserById" parameterType="java.lang.String" resultMap="BaseResultMap">
+  
+   select * from fenlei where id in
+   
+  <foreach item="arr" collection="array" index="no" open="(" separator="," close=")">
+    
+   #{arr}
+	
+  </foreach>
+  
+  </select>
+  
+  <select id="selectAll2" resultMap="BaseResultMap">
+  
+  select * from fenlei
+  
+  </select>
+  
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+  	
+  	delete from fenlei
+  	where id in
+  	 <foreach item="arr" collection="array" index="no" open="(" separator="," close=")">
+    
+   #{arr}
+	
+  </foreach>
+  
+  	
+  </delete>
   
 </mapper>
