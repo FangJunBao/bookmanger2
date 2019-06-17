@@ -57,7 +57,7 @@
 			<form action="user" method="post"  class="form-horizontal">  --%>
 			
 		
-			
+			<!-- frnlei -->
         <form action="monster" class="form-horizontal" method="post">
 	  <h1 align="center"><font color="red">修改分类界面</font></h1>
 
