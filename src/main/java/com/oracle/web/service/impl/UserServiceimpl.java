@@ -111,5 +111,13 @@ public List<User> showUser() {
 	return userMapper.showUser();
 }
 
+@Override
+public void deleteUser(String[] arr) {
+	// TODO Auto-generated method stub
+	this.userMapper.deleteByPrimaryKey2(arr);
+	
+	
+}
+
 
 }
