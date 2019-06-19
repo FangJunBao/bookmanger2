@@ -5,7 +5,7 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
-    <result column="userName" jdbcType="VARCHAR" property="username" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="touxiang" jdbcType="VARCHAR" property="touxiang" />
   </resultMap>
@@ -15,7 +15,7 @@
   </delete>
   <insert id="insert" parameterType="com.oralce.web.bean.Admin">
     insert into admin (id, name, phone, 
-      userName, password, touxiang
+      username, password, touxiang
       )
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
       #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{touxiang,jdbcType=VARCHAR}
@@ -25,19 +25,33 @@
     update admin
     set name = #{name,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
-      userName = #{username,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       touxiang = #{touxiang,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select id, name, phone, userName, password, touxiang
+    select id, name, phone, username, password, touxiang
     from admin
     where id = #{id,jdbcType=INTEGER}
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
-    select id, name, phone, userName, password, touxiang
+    select id, name, phone, username, password, touxiang
     from admin
   </select>
-  
+  <select id="login" parameterType="Map" resultType="com.oralce.web.bean.Admin">
+     SELECT * FROM admin WHERE username=#{username,jdbcType=VARCHAR}
+    </select>
+    
+    <select id="showAdmin" parameterType="Map" resultType="com.oralce.web.bean.Admin">
+     select id, name, phone, username, password ,touxiang FROM admin WHERE username=#{username,jdbcType=VARCHAR}
+    </select>
+    
+    <select id="updatePassword" resultType="com.oralce.web.bean.Admin"> 
+     update admin set password=#{password,jdbcType=VARCHAR} where username=#{username,jdbcType=VARCHAR}
+    </select>
+    
+     <select id="validatePassword" resultType="com.oralce.web.bean.Admin">
+     select username from admin where username=#{username,jdbcType=VARCHAR} and password=#{password,jdbcType=VARCHAR}
+    </select>
 </mapper>

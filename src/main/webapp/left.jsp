@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -62,114 +63,11 @@ a {
 	  </div>
 	  <h3>管理员信息管理</h3>
 		<div>
-				<li><a href="showAdmin.jsp" target="right"><span class="ui-icon ui-icon-copy"></span>查看管理员信息</a></li>
+				<li><a href="showAdmin" target="right"><span class="ui-icon ui-icon-copy"></span>查看管理员信息</a></li>
 				<li><a href="UpdateAdminPassword.jsp" target="right" ><span class="ui-icon ui-icon-wrench"></span>修改管理员密码</a></li>
-				<li><a href="Adminservlet?action=exit" target="_parent"><span class="ui-icon ui-icon-info"></span>退出系统</a></li>
+				<li><a href="login.jsp" target="_parent"><span class="ui-icon ui-icon-info"></span>退出系统</a></li>
 				<!--  <li><a href="#"><span class="ui-icon ui-icon-trash"></span>删除分类</a></li>-->
 
 	  </div>
-	<!-- - <table bgcolor="pink" width="200px" border="1" align="center"
-		bordercolor="white">
-     
-		<tr align="center">
-			<td><font size="5" color="white"><p id="root">+分类管理</p></font></td>
-		</tr>
-
-		<tr >
-			<td>
-			   <div id="changroot">
-				<table height="80px" align="center" cellspacing="0" width="100px">
-					<tr align="center">
-						<td><p><a href="addFenlei.jsp" target="right"><input
-								type="button" value="添加分类" /></a></p></td>
-					</tr>
-					<tr align="center">
-						<td><p><a href="Fenleiservlet?action=showFenleiByPage"
-							target="right"><input type="button" value="查看分类" /></a></p></td>
-					</tr>
-					<tr align="center">
-						<td><p><a href="UpdateFenlei.jsp"
-							target="right"><input type="button" value="修改分类" /></a></p></td>
-					</tr>
-				</table>
-              </div>
-			</td>
-		</tr>
-
-		<tr align="center">
-			<td><font size="5" color="white"><p id="book">+图书管理</p></font></td>
-		</tr>
-		<tr >
-			<td>
-			<div id="changbook">
-				<table height="80px" align="center" cellspacing="0" width="100px">
-					<tr align="center">
-						<td><p><a href="addBook.jsp" target="right"><input
-								type="button" value="添加图书" /></a></p></td>
-					</tr>
-					<tr align="center">
-						<td><p><a href="Bookservlet?action=showBook" target="right"><input
-								type="button" value="查看图书" /></a></p></td>
-					</tr>
-					<!--  <tr align="center">
-						<td><p><a href="xiugaiBook.jsp" target="right"><input
-								type="button" value="修改图书" /></a></p></td>
-					</tr>
-					
-				</table>
-				</div>
-			</td>
-		</tr>
-		<tr align="center">
-			<td><font size="5" color="white"><p id="user">+用户管理</p></font></td>
-		</tr>
-		<tr >
-			<td>
-			<div id="changuser">
-				<table height="80px" align="center" cellspacing="0" width="100px">
-					<tr align="center">
-						<td><p><a href="addUser.jsp" target="right"><input
-								type="button" value="添加用户" /></a></p></td>
-					</tr>
-					<tr align="center">
-						<td><p><a href="Userservlet?action=showUserByPage" target="right"><input
-								type="button" value="查看用户" /></a></p></td>
-					</tr>
-					<!-- Userservlet?action=showUserByPage -->
-				<!-- 	<tr align="center">
-						<td><p><a href="xiugaiUser.jsp" target="right"><input
-								type="button" value="修改用户" /></a></p></td>
-					</tr>
-					 
-				</table>
-				</div>
-			</td>
-		</tr>
-		<tr align="center">
-			<td><font size="5" color="white"><p id="admin">+管理员信息管理</p></font></td>
-		</tr>
-		<tr>
-			<td>
-			<div id="changadmin">
-				<table height="100px" align="center" cellspacing="0" width="100px">
-					<tr align="center">
-						<td><p><a href="showAdmin.jsp" target="right"><input
-								type="button" value="查看管理员信息" /></a></p></td>
-					</tr>
-					<tr align="center">
-						<td><p><a href="UpdateAdminPassword.jsp" target="right"><input
-								type="button" value="修改密码" /></a></p></td>
-					</tr>
-					<tr align="center">
-						<td><p><a href="Adminservlet?action=exit" target="_parent"><input
-								type="button" value="退出系统" /></a></p></td>
-					</tr>
-				</table>
-				<div>
-			</td>
-		</tr>
-
-	</table>
-        -->
-			</body>
+	
 </html>
