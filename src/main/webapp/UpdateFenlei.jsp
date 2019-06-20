@@ -96,7 +96,7 @@
 					</div>
 				
 				<div class="form-group">
-						<button type="submit" class="btn btn-success btn-block">添加</button>
+						<button type="submit" class="btn btn-success btn-block">修改</button>
 						<button type="reset" class="btn btn-success btn-block">重填</button>
 					</div>
 	  </form> 
