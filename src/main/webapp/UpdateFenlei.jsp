@@ -58,14 +58,18 @@
 			
 		
 			<!-- frnlei -->
+			
+			<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
         <form action="monster" class="form-horizontal" method="post">
-	  <h1 align="center"><font color="red">修改分类界面</font></h1>
-
-		<div class="container">
+	  <!-- <h1 align="center"><font color="red">修改分类界面</font></h1>
+ -->
+		<!-- <div class="container"> -->
 		<input type="hidden" name="_method" value="PUT">
 		
-		<table align=center width="150px" height="150px"  border=1 class="table"
-			cellspacing="0" bordercolor="silver">
+		<%--  <table align=center width="150px" height="150px"  border=1 class="table"
+			cellspacing="0" bordercolor="silver"> 
 			 <input type="hidden" name="id" value="${fenlei.id }"/> 
 			
 			<tr align="center">
@@ -81,8 +85,28 @@
 				   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;<a
 					href='monsterss' class="btn btn-primary">取消</a></td>
 			</tr>
-			</table>		
+			</table>	--%>
+			
+			 <input type="hidden" name="id" value="${fenlei.id }"/> 
+			 
+			<h3 class="text-center text-success">修改分类</h3>
+					<div class="form-group">
+						<label>分类的名称:</label> 
+						<input type="text" name="name" class="form-control"  value="${fenlei.name }"  />
+					</div>
+				
+				<div class="form-group">
+						<button type="submit" class="btn btn-success btn-block">添加</button>
+						<button type="reset" class="btn btn-success btn-block">重填</button>
+					</div>
 	  </form> 
+	  
+	  </div>
+
+
+		</div>
+
+	</div>
 	  
 	  
 	<%--   
