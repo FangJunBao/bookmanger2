@@ -18,16 +18,7 @@ body {
 }
 
 </style>
-<!--  
-<script type="text/javascript" src="js/ajax.js"></script>
-<script type="text/javascript">
 
-
-  function test(){
-	  return validateUserName();
-  }
-</script>
--->
 </head>
 <body>
 	<table width="100%" height="1000px" cellspacing="0">
@@ -41,7 +32,7 @@ body {
 		<tr background="./imgs/3.jpg">
 			<td width="30%"></td>
 			<td align="center">
-				<form action="Adminservlet?action=login"  method="post"  name="login1"  onsubmit="return test()">
+				<form action="login"  method="post"  class="form-horizontal">
 					<table frame="box" width="600px" height="280px" bordercolor="white">
 						<tr>
 							<td colspan="2" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font
@@ -49,7 +40,7 @@ body {
 						</tr>
 						<tr>
 							<td align="center"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="5">登录账号:</font></b></td>
-							<td><input type="text" name="userName" onblur="validateUserName()"/><span id="userNameMsg"></span></td>
+							<td><input type="text" name="username" onblur="validateUsername()"/><span id="usernameMsg"></span></td>
 						</tr>
 						<tr>
 							<td align="center"><b><font size="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密&nbsp;&nbsp;&nbsp;&nbsp;码:</font></b></td>

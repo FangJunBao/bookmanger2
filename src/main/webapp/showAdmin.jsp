@@ -1,42 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1">
 <title>查看管理员</title>
 <script type="text/javascript" src="js/ajax.js"></script>
-<script type="text/javascript">
-	window.onload = function() {
-         var opt={
-        	method:"POST",
-            url:"Adminservlet",
-            params:"action=ShowOneAdmin",
-            type:"json",
-            success:function(date){
-            	var admin=date;
-            	var id=document.getElementById("id");
-            	id.innerHTML=admin.id;
-            	var name=document.getElementById("name");
-            	name.innerHTML=admin.name;
-            	var phone=document.getElementById("phone");
-            	phone.innerHTML=admin.phone;
-            	var userName=document.getElementById("userName");
-            	userName.innerHTML=admin.userName;
-            	var password=document.getElementById("password");
-            	password.value=admin.password;
-            	var touxiang=document.getElementById("touxiang");
-            	var img9=document.createElement("img");
-            	img9.src="/img9"+admin.touxiang;
-            	  img9.width=50;
-            	  img9.height=50;
-            	//alert(img9.src);
-            	touxiang.appendChild(img9);
-            }
-         };
-         ajax(opt);
-	};
-</script>
 </head>
 <body background="imgs/3.jpg">
 	<br />
@@ -66,7 +37,7 @@
 			</tr>
 			<tr align="center">
 				<td>账号</td>
-				<td id="userName"></td>
+				<td id="username"></td>
 			</tr>
 			<tr align="center">
 				<td>密码</td>
@@ -74,9 +45,10 @@
 					disabled="disabled"/></td>
 			</tr>
 			<tr align="center">
-				<td>头像</td>
-				<td id="touxiang"></td>
+			    <td>头像</td>
+				<td><img src="touxiang/${sessionScope.touxiang }" style="width:60px;height:50px" class="img-circle img-responsive"/></td>
 			</tr>
+			
 		</table>
 	</center>
 </body>

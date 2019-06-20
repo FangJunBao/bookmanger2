@@ -78,6 +78,11 @@ public class Admin {
 		this.password = password;
 		this.touxiang = touxiang;
 	}
+
+	public Admin() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 	
     
